@@ -1,0 +1,108 @@
+{
+	"classes":[
+		{
+			"id":"0",
+			"cls":"humen",
+			"color":"red",
+			"keypoints":[
+				{
+					"id":"0",
+					"name":"r ankle",
+					"color":"red"
+				},
+				{
+					"id":"1",
+					"name":"r knee",
+					"color":"green"
+				},
+				{
+					"id":"2",
+					"name":"r hip",
+					"color":"blue"
+				},
+				{
+					"id":"3",
+					"name":"l hip",
+					"color":"yellow"
+				},
+				{
+					"id":"4",
+					"name":"l knee",
+					"color":"white"
+				},
+				{
+					"id":"5",
+					"name":"l ankle",
+					"color":"black"
+				},
+				{
+					"id":"6",
+					"name":"pelvis",
+					"color":"gray"
+				},
+				{
+					"id":"7",
+					"name":"thorax",
+					"color":"pink"
+				},
+				{
+					"id":"8",
+					"name":"upper neck",
+					"color":"brown"
+				},
+				{
+					"id":"9",
+					"name":"head top",
+					"color":"gold"
+				},
+				{
+					"id":"10",
+					"name":"r wist",
+					"color":"purple"
+				},
+				{
+					"id":"11",
+					"name":"r elbow",
+					"color":"skyblue"
+				},
+				{
+					"id":"12",
+					"name":"r shoulder",
+					"color":"darkred"
+				},
+				{
+					"id":"13",
+					"name":"l shoulder",
+					"color":"darkgreen"
+				},
+				{
+					"id":"14",
+					"name":"l elbow",
+					"color":"darkblue"
+				},
+				{
+					"id":"15",
+					"name":"l wrist",
+					"color":"greenyellow"
+				}
+			]
+		},
+		{
+			"id":"1",
+			"cls":"cow",
+			"color":"green",
+			"keypoints":[
+				{
+					"id":"0",
+					"name":"c1",
+					"color":"red"
+				},
+				{
+					"id":"1",
+					"name":"c2",
+					"color":"green"
+				}
+			]
+		}
+		]
+}
