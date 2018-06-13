@@ -116,7 +116,8 @@ class Canvas(FigureCanvas):
                         return
                     self.bboxs[self.selectPicker].kpointIds[self.nextbegin] = self.pickerCnt
                     self.kpoint[self.pickerCnt] = WrapKeyPoint(
-                        patches.Rectangle([ev.xdata - self.prange / 2, ev.ydata - self.prange / 2], self.prange,
+                        patches.Rectangle(
+                                          self.pointToRect(ev.xdata,ev.ydata), self.prange,
                                           self.prange,
                                           picker=self.pickerCnt,
                                           edgecolor=None,
@@ -422,10 +423,11 @@ class Canvas(FigureCanvas):
                 for kkey in range(len(self.bboxs[bkey].kpointIds)):
                     pickerId=self.bboxs[bkey].kpointIds[kkey]
                     if pickerId!=None:
+                        x, y = self.rectToPoint(self.kpoint[pickerId].rect)
                         keypoints.append([
                             kkey,
-                            int(self.kpoint[pickerId].rect.get_x())+int(self.kpoint[pickerId].rect.get_width()/2),
-                                int(self.kpoint[pickerId].rect.get_y())+int(self.kpoint[pickerId].rect.get_height()/2),
+                            int(x),
+                            int(y),
                             1
                         ])
                     else:
@@ -479,7 +481,7 @@ class Canvas(FigureCanvas):
                     keypoints[kid]=None
                 else:
                     keypoints[kid]=self.pickerCnt
-                    kprect=patches.Rectangle([kx-self.prange/2,ky-self.prange/2],self.prange,self.prange,
+                    kprect=patches.Rectangle(self.pointToRect(kx,ky),self.prange,self.prange,
                               picker=self.pickerCnt,
                               edgecolor=None,
                               facecolor=AnnotionConfigure.instance().getKeypointColor(clsId,kid))
@@ -497,3 +499,9 @@ class Canvas(FigureCanvas):
                 keypoints
             )
             self.draw()
+
+    def pointToRect(self,x,y):
+        return x-self.prange/2,y-self.prange/2,x+self.prange/2,y+self.prange/2
+
+    def rectToPoint(self,rect):
+        return rect.get_x()+rect.get_width()/2,rect.get_y()+rect.get_height()/2
